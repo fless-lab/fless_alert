@@ -32,19 +32,19 @@ class FlessAlert extends StatefulWidget {
   final double? height;
   final Color? backgroundColor;
   final double? iconPadding;
-  late final IconData? statusIcon;
-  late final Color? statusIconBgcolor;
-  late final Color? statusIconcolor;
-  late final IconData? actionIcon;
+  IconData? statusIcon;
+  Color? statusIconBgcolor;
+  Color? statusIconcolor;
+  IconData? actionIcon;
   final Color? actionIconcolor;
   final void Function()? onActionIconPressed;
   final ShapeBorder? shape;
   final String title;
-  late final Color? titleColor;
+  Color? titleColor;
   final String description;
   final Color? descriptionColor;
   final bool showBottonBtn = true;
-  late final Color? bottomBtnBgcolor;
+  Color? bottomBtnBgcolor;
   final String bottomBtnText;
   final Color? bottomBtnTextColor;
   final void Function()? onBottomBtnPressed;
@@ -110,7 +110,7 @@ class _FlessAlertState extends State<FlessAlert> {
                             borderRadius: BorderRadius.circular(7)),
                         child: Icon(
                           widget.statusIcon,
-                          color: widget.statusIconBgcolor,
+                          color: widget.statusIconcolor,
                         ),
                       ),
                       SizedBox(width: getProportionateScreenWidth(20)),
@@ -148,25 +148,25 @@ class _FlessAlertState extends State<FlessAlert> {
               ),
             ),
             if (widget.showBottonBtn)
-              Padding(
-                padding: EdgeInsets.only(
-                  left: getProportionateScreenWidth(iconpadd),
-                  right: getProportionateScreenWidth(10),
-                ),
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(
-                      horizontal: getProportionateScreenWidth(15),
-                      vertical: getProportionateScreenHeight(7)),
-                  decoration: BoxDecoration(
-                      color: widget.bottomBtnBgcolor,
-                      borderRadius: BorderRadius.circular(7)),
-                  child: Center(
-                    child: InkWell(
-                      onTap: widget.onBottomBtnPressed ??
-                          () {
-                            Navigator.pop(context);
-                          },
+              InkWell(
+                onTap: widget.onBottomBtnPressed ??
+                    () {
+                      Navigator.pop(context);
+                    },
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    left: getProportionateScreenWidth(iconpadd),
+                    right: getProportionateScreenWidth(10),
+                  ),
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(
+                        horizontal: getProportionateScreenWidth(15),
+                        vertical: getProportionateScreenHeight(7)),
+                    decoration: BoxDecoration(
+                        color: widget.bottomBtnBgcolor,
+                        borderRadius: BorderRadius.circular(7)),
+                    child: Center(
                       child: Text(
                         widget.bottomBtnText,
                         style: TextStyle(
