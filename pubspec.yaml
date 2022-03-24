@@ -1,6 +1,6 @@
 name: fless_alert
 description: A new way to create customizable alert dialogs in flutter.
-version: 0.0.2
+version: 1.0.1
 homepage: https://github.com/fless-lab/fless_alert
 
 environment:

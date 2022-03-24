@@ -7,7 +7,7 @@ A new way to create customizable alert dialogs in flutter.
 1. Add the latest version of package to your pubspec.yaml (and un `dart pub get`):
 ```yaml
 dependencies:
-  fless_alert: ^0.0.1
+  fless_alert: ^1.0.1
 ```
 
 2. Import the package and use it in your Flutter app.
